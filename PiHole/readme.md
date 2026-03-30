@@ -58,7 +58,7 @@ The most important lesson was to trust my own knowledge and capabilities more.
 ---
 
 ## Network Diagram
-![Network Diagram] (network_diagram.png)
+![Network Diagram](network_diagram.png)
 
 ---
 
