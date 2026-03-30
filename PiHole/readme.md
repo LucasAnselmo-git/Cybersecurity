@@ -62,6 +62,10 @@ The most important lesson was to trust my own knowledge and capabilities more.
 
 ---
 
+## PiHole Dashboard
+![PiHole Dashboard](pihole_dashboard.png)
+---
+
 ## Flow Diagram
 ```mermaid
 flowchart TD
