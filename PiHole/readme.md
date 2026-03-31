@@ -50,6 +50,11 @@ DNS settings, everything worked on all devices instantly.
 
 ---
 
+## DoH Improvement
+Configured dnscrypt-proxy to have an encrypted layer from my Pi to my ISP.
+
+---
+
 ## Lessons learned
 The second most important lesson was not to be overreliant on AIs — it was 
 spouting nonsense after a while and led me astray from a simple solution. 
