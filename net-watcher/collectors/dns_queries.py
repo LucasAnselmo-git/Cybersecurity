@@ -17,12 +17,26 @@ def get_recent_queries(limit: int = 20) -> list[dict]:
     
     Returns: 
         One list of dicts per query, with keys:
-        timestamp, domain, client, status
+        timestamp, client, domain, status
     """
 
-    pass
+    sql = """
+        SELECT timestamp, client, domain, status
+        FROM queries
+        ORDER BY id DESC
+        LIMIT ?
+    """
+
+    with sqlite3.connect(f"file:{FTL_DB_PACTH}?mode=ro", uri=True) as conn:
+        conn.row_factory = sqlite3.Row
+        cursor = conn.execute(sql, (limit,))
+        rows = cursor.fetchall()
+
+    return [dict(row) for row in rows]
 
 # Only run if is in main
 if __name__ == "__main__":
     queries = get_recent_queries(5)
-    print(queries)
+    print(f"Got {len(queries)} queries:\n")
+    for query in queries:
+        print(query)
