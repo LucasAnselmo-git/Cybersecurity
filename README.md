@@ -15,7 +15,7 @@ enjoying it, so I decided to focus on it and here I am.
 | N# | Project | Focus Area | Status |
 |----|---------|------------|--------|
 | 01 | [Pi-Hole DNS](./PiHole) | DNS, Network Security, Log and Traffic Analysis | ✅ Finished |
-| 02 | [Arp-Scan Dashboard](./net-watcher) | Log and Traffic Visualisation, Current devices monitoring | WIP |
+| 02 | [Arp-Scan Dashboard](./net-watcher) | Log and Traffic Visualisation, Current devices monitoring | ✅ Finished |
 
 ## Tools and Tech
 
