@@ -5,30 +5,30 @@ from rich import box
 from rich.console import Console
 
 
-def build_arp_panel(queries):
+def build_arp_panel(devices):
     """
     Function to build the ARP panel view of the dashboard
 
     Args:
-        Dict of queries
+        devices (list[dict]): Raw data from ARP scan
 
     Returns:
-        A table with the columns: Device, IP.
-        Built from rich library
+        rich.table.Table: Table with columns: Device, IP
     """
     table = Table(title="Active Devices", box=box.SIMPLE_HEAVY)
 
     table.add_column("Device")
     table.add_column("IP")
 
-    for row in queries:
-        device_name = devices_name_map.get(row["ip"], row["ip"])
+    for row in devices:
+        device_name = devices_name_map.get(row["ip"], row["ip"][8:]) # Registered name or IP
+
         
-        table.add_row(f"[#2a6496]{device_name}[/#2a6496]", row["ip"])
+        table.add_row(f"[#2a6496]{device_name}[/#2a6496]", row["ip"][8:])
     
     return table
 
 if __name__=="__main__":
-    queries = get_current_devices()
-    table = build_arp_panel(queries)
+    devices = get_current_devices()
+    table = build_arp_panel(devices)
     Console().print(table)
